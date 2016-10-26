@@ -158,7 +158,22 @@ function test(response) {
 
 ## XE UI Components
 
-### XE.validate
+### XE.validate( $form )
+
+
+```html
+<!-- XE form sample -->
+<form action="/users" method="POST" data-form='xe-validation'>
+  <div class="xe-form-group">
+    <label for="id">ID</label>
+    <input type="text" class="xe-form-control" id="id" />
+  </div>
+  <div class="xe-form-group">
+    <label for="password">Password</label>
+    <input type="password" class="xe-form-control" id="password" />
+  </div>
+</form>
+```
 
 ### toast popup
 #### XE.toast( type, message )
