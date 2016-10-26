@@ -166,11 +166,11 @@ function test(response) {
 <form action="/users" method="POST" data-form='xe-validation'>
   <div class="xe-form-group">
     <label for="id">ID</label>
-    <input type="text" class="xe-form-control" id="id" />
+    <input type="text" class="xe-form-control" id="id" data-valid='required|alphanum' />
   </div>
   <div class="xe-form-group">
     <label for="password">Password</label>
-    <input type="password" class="xe-form-control" id="password" />
+    <input type="password" class="xe-form-control" id="password" data-valid='required|alphanum' />
   </div>
 </form>
 ```
