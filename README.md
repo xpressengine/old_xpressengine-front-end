@@ -113,7 +113,7 @@ XE.ajax('/item', {
 });
 ```
 
-#### XE form
+### XE form
 XE form은 마크업된 form요소의 attribute를 통해 ajax를 사용하는 방법입니다. 우선 XE form을 사용하기 위해서는 xe-form.js 스크립트를 로드해야 합니다.
 
 ```php
@@ -128,7 +128,7 @@ XE form은 마크업된 form요소의 attribute를 통해 ajax를 사용하는 �
 
 xe-form.js파일을 로드한 상태에서 form마크업시 **data-submit='xe-ajax'** attribute를 사용하게되면 해당 form이 submit될 때 XE.ajax가 실행됩니다.
 
-#####Attributes
+####Attributes
 * data-submit : XE form을 사용하기 위한 **필수** 요소
 * action : 요청할 url 정보
 * method : http method POST | GET
@@ -157,6 +157,9 @@ function test(response) {
 ```
 
 ## XE UI Components
+
+### XE.validate
+
 ### toast popup
 #### XE.toast( type, message )
 토스트 팝업을 생성하여 메시지를 보여줍니다.
