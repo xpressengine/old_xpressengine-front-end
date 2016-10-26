@@ -2,7 +2,7 @@
 
 
 ## XE Core
-### 1. XE.Lang
+### XE.Lang
 #### XE.Lang.trans( id [, parameter] )
 등록되어 있는 다국어를 리턴해줍니다.
 ##### id (string)
@@ -38,7 +38,7 @@ console.log(email) // 이메일 or E-mail
 console.log(msg) // 안녕하세요. 반갑습니다.
 ```
 
-### 2. XE.Progress
+### XE.Progress
 
 #### XE.Progress.start()
 Progress bar를 생성하는 UI를 화면에 노출합니다. 
@@ -52,7 +52,7 @@ XE.Progress.done(); // progress bar 제거
 ```
 
 
-### 3. XE.Request
+### XE.Request
 
 #### XE.Request.get( url [, data] [, callback] [, dataType] )
 서버로부터 데이터를 전달 받습니다.
@@ -113,8 +113,51 @@ XE.ajax('/item', {
 });
 ```
 
+#### XE form
+XE form은 마크업된 form요소의 attribute를 통해 ajax를 사용하는 방법입니다. 우선 XE form을 사용하기 위해서는 xe-form.js 스크립트를 로드해야 합니다.
+
+```php
+//blade파일(php)에서 로드할 경우
+{{ XeFrontend::js('assets/core/xe-ui-component/js/xe-form.js')->appendTo('body')->load() }}
+
+```
+```html
+<-- html에서 로드할 경우 -->
+<script type='text/javascript' src='assets/core/xe-ui-component/js/xe-form.js'></script>
+```
+
+xe-form.js파일을 로드한 상태에서 form마크업시 **data-submit='xe-ajax'** attribute를 사용하게되면 해당 form이 submit될 때 XE.ajax가 실행됩니다.
+
+#####Attributes
+* data-submit : XE form을 사용하기 위한 **필수** 요소
+* action : 요청할 url 정보
+* method : http method POST | GET
+* data-callback : 요청이 정상 응답일 경우 실행될 callback 콜백으로 사용할 자바스크립트의 별도 구현이 필요
+
+```html
+<!-- XE form sample -->
+<form action="/users" method="POST" data-submit="xe-ajax" data-callback="test">
+  <div class="xe-form-group">
+    <label for="id">ID</label>
+    <input type="text" class="xe-form-control" id="id" />
+  </div>
+  <div class="xe-form-group">
+    <label for="password">Password</label>
+    <input type="password" class="xe-form-control" id="password" />
+  </div>
+</form>
+```
+
+```javascript
+//callback sample
+function test(response) {
+  console.log(response);
+  alert('success');
+}
+```
+
 ## XE UI Components
-### 1. toast popup
+### toast popup
 #### XE.toast( type, message )
 토스트 팝업을 생성하여 메시지를 보여줍니다.
 ##### type (string)
@@ -125,7 +168,7 @@ toast popup 생성시 보여줄 메시지를 지정합니다.
 XE.toast('success', '토스트 팝업 생성 성공!');
 ```
 
-### 2. dropdown
+### dropdown
 #### $(selector).xeDropdown()
 dropdown메뉴를 생성하는 UI 컴포넌트입니다. html마크업을 통해서 해당 컴포넌트 기능을 사용할 경우에는 `data-toggle="xe-dropdown"` 속성을 버튼에 사용해 주어야 합니다. 버튼에 해당 속성을 사용해 주게 되면 이벤트가 자동으로 바인딩되어 버튼 기능이 활성화 됩니다.
 ```html
@@ -144,7 +187,7 @@ dropdown메뉴를 생성하는 UI 컴포넌트입니다. html마크업을 통해
 //javascript
 $('[data-toggle=xe-dropdown]').xeDropdown();
 ```
-### 3. modal
+### modal
 #### $(selector).xeModal( options )
 modal창을 생성하는 UI 컴포넌트입니다. html마크업을 통해서 해당 컴포넌트 기능을 사용할 경우에는 `data-toggle="xe-modal"` 속성을 버튼에 사용해 주어야 합니다. 버튼에 해당 속성을 사용해 주게 되면 이벤트가 자동으로 바인딩되어 버튼 기능이 활성화 됩니다.
 ##### options (object)
@@ -180,7 +223,7 @@ modal창을 생성하는 UI 컴포넌트입니다. html마크업을 통해서 �
 ```javascript
 $('#modal').xeModal();
 ```
-### 4. tooltip
+### tooltip
 #### $(selector).xeTooltip( options )
 tooltip을 생성하는 UI 컴포넌트입니다. html마크업을 통해서 해당 컴포넌트 기능을 사용할 경우에는 `data-toggle="xe-tooltip"` 속성을 버튼에 사용해 주어야 합니다. 버튼에 해당 속성을 사용해 주게 되면 이벤트가 자동으로 바인딩되어 버튼 기능이 활성화 됩니다.
 ##### options (object)
@@ -202,7 +245,7 @@ tooltip을 생성하는 UI 컴포넌트입니다. html마크업을 통해서 해
 ```javascript
 $('[data-toggle="xe-tooltip"]').xeTooltip();
 ```
-### 5. lightbox
+### lightbox
 #### $(selector).lightbox()
 
 ```html
@@ -222,7 +265,7 @@ $('.images > img').lightbox();
 
 
 ## Common
-### 1. dynamicLoadManager
+### dynamicLoadManager
 DynamicLoadManager는 script, css파일등을 비동기로 로드하고 스크립트 중복 로드를 방지합니다.
 
 #### DynamicLoadManager.jsLaod( url [, load] [, error] )
@@ -282,7 +325,7 @@ css파일을 로드하고 요청 성공시 load콜백을 실행합니다.
     console.log('loaded');
   });
 ```
-### 3. utils
+### utils
 #### Utils.asset( url )
 ##### url (string)
 ```javascript
