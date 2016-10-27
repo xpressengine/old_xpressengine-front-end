@@ -195,7 +195,7 @@ function test(response) {
 
 ```html
 <!-- XE form sample -->
-<form id='form' action="/users" method="POST" data-form='xe-validation' data-rule-alert-type="toast">
+<form id='form' action="/users" method="POST" data-rule-alert-type="toast">
     <div class="xe-form-group">
         <label for="id">ID</label>
         <input type="text" name="id" class="xe-form-control" id="id" data-valid='required|alphanum' />
