@@ -195,21 +195,21 @@ function test(response) {
 ```html
 <!-- XE form sample -->
 <form id='form' action="/users" method="POST" data-form='xe-validation' data-rule-alert-type="toast">
-        <div class="xe-form-group">
-            <label for="id">ID</label>
-            <input type="text" name="id" class="xe-form-control" id="id" data-valid='required|alphanum' />
-        </div>
-        <div class="xe-form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" class="xe-form-control" id="password" data-valid='required|alphanum' />
-        </div>
-        <div>
-            <label for='chk1' class="checkbox-inline"><input name="check[]" id='chk1' type="checkbox" value='apple' data-valid='checked:1-3' />사과</label>
-            <label for='chk2' class="checkbox-inline"><input name="check[]" id='chk2' type="checkbox" value='grape' />포도</label>
-            <label for='chk3' class="checkbox-inline"><input name="check[]" id='chk3' type="checkbox" value='strawberry' />딸기</label>
-            <label for='chk4' class="checkbox-inline"><input name="check[]" id='chk4' type="checkbox" value='lemon' />레몬</label>
-        </div>
-    </form>
+    <div class="xe-form-group">
+        <label for="id">ID</label>
+        <input type="text" name="id" class="xe-form-control" id="id" data-valid='required|alphanum' />
+    </div>
+    <div class="xe-form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="xe-form-control" id="password" data-valid='required|alphanum' />
+    </div>
+    <div>
+        <label for='chk1' class="checkbox-inline"><input name="check[]" id='chk1' type="checkbox" value='apple' data-valid='checked:1-3' />사과</label>
+        <label for='chk2' class="checkbox-inline"><input name="check[]" id='chk2' type="checkbox" value='grape' />포도</label>
+        <label for='chk3' class="checkbox-inline"><input name="check[]" id='chk3' type="checkbox" value='strawberry' />딸기</label>
+        <label for='chk4' class="checkbox-inline"><input name="check[]" id='chk4' type="checkbox" value='lemon' />레몬</label>
+    </div>
+</form>
 ```
 ```javascript
 XE.formValidate($('#form'));
