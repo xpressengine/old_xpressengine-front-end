@@ -159,20 +159,53 @@ function test(response) {
 ## XE UI Components
 
 ### XE.validate( $form )
+마크업에 있는 element의 data-valid attribute에 정의된 유효성을 체크합니다. 유효성 체크를 하고자 하는 내용을 '|'구분하여 지정하면 여러개의 유효성을 체크하게되고 유효성이 통과하지 못할 경우 XE.toast를 통해 메시지를 노출합니다.
 
+####data-valid
+* required
+  - 필수 요소일 경우 사용합니다.
+* checked:min-max
+  - checkbox, raido 타입에 사용됩니다.
+  - min, max는 number 타입으로 지정합니다. radio button에서는 필수 체크시 **checked:1**로 표기 합니다.
+* alpha
+  - 알파벳으로만 사용되는 필드 값을 체크합니다.
+* alphanum
+  - 알파벳 또는 숫자 값을 체크 합니다.
+* min
+  - 최소 입력 글자를 체크 합니다.
+* max
+  - 최대 입력 글자를 체크 합니다
+* email
+  - 이메일 형식인지 체크 합니다.
+* url
+  - url형식으로 입력되었는지 체크합니다.
+* numeric
+ - 숫자값만 입력되었는지 체크합니다.
+* between
 
 ```html
 <!-- XE form sample -->
-<form action="/users" method="POST" data-form='xe-validation'>
-  <div class="xe-form-group">
-    <label for="id">ID</label>
-    <input type="text" class="xe-form-control" id="id" data-valid='required|alphanum' />
-  </div>
-  <div class="xe-form-group">
-    <label for="password">Password</label>
-    <input type="password" class="xe-form-control" id="password" data-valid='required|alphanum' />
-  </div>
+<form id='form' action="/users" method="POST" data-form='xe-validation' data-rule-alert-type="toast">
+    <div class="xe-form-group">
+        <label for="id">ID</label>
+        <input name="check[]" type="checkbox" class="xe-form-control" data-valid='checked:1-3' />
+        <input name="check[]" type="checkbox" class="xe-form-control" />
+        <input name="check[]" type="checkbox" class="xe-form-control" />
+        <input name="check[]" type="checkbox" class="xe-form-control" />
+        <input name="check[]" type="checkbox" class="xe-form-control" />
+    </div>
+    <div class="xe-form-group">
+        <label for="id">ID</label>
+        <input type="text" name="id" class="xe-form-control" id="id" data-valid='required|alphanum' />
+    </div>
+    <div class="xe-form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="xe-form-control" id="password" data-valid='required|alphanum' />
+    </div>
 </form>
+```
+```javascript
+XE.formValidate($('#form'));
 ```
 
 ### toast popup
