@@ -133,10 +133,11 @@ xe-form.js파일을 로드한 상태에서 form마크업시 **data-submit='xe-aj
 * action : 요청할 url 정보
 * method : http method POST | GET
 * data-callback : 요청이 정상 응답일 경우 실행될 callback 콜백으로 사용할 자바스크립트의 별도 구현이 필요
+* data-validate (boolean) : 요청전 폼 요소의 유효성 체크를 합니다. 유효성 체크를 하려면 XE UI Components의 XE.validate의 내용을 폼요소에 적용해야 합니다. true|false
 
 ```html
 <!-- XE form sample -->
-<form action="/users" method="POST" data-submit="xe-ajax" data-callback="test">
+<form action="/users" method="POST" data-submit="xe-ajax" data-callback="test" data-validate='true'>
   <div class="xe-form-group">
     <label for="id">ID</label>
     <input type="text" class="xe-form-control" id="id" />
