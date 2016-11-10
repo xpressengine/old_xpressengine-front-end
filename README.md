@@ -158,6 +158,12 @@ function test(response) {
 ```
 
 ### XE.page(url, target, options, callback)
+target영역에 html을 로드하여 화면에 랜더링합니다. response로 html 및 js, css파일들의 경로를 전달 받습니다.
+##### 동작 순서
+1. js, css파일 로드
+2. html 로드
+3. callback 실행 
+
 #### url (string)
 ajax가 호출될 url
 #### target (string)
@@ -168,6 +174,7 @@ html이 append될 selector
 * addType (string) target에 response html을 넣어주는 방식의 타입 `append`, `prepend`, `before`, `after`. 옵션을 명시하지 않을 경우 jquery fn.html을 사용한다.
 
 #### callback (function)
+html append이후에 실행될 callback
 
 ### XE.validate( $form )
 해당 폼 요소에 있는 값들의 유효성을 체크합니다. 마크업에 있는 element의 data-valid attribute에 정의된 유효성을 체크합니다. 유효성 체크를 하고자 하는 내용을 '|'구분하여 지정하면 여러개의 유효성을 체크하게되고 유효성이 통과하지 못할 경우 메시지를 노출합니다.
