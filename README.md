@@ -230,6 +230,24 @@ XE.toast('success', '토스트 팝업 생성 성공!');
 ### dropdown
 #### $(selector).xeDropdown()
 dropdown메뉴를 생성하는 UI 컴포넌트입니다. html마크업을 통해서 해당 컴포넌트 기능을 사용할 경우에는 `data-toggle="xe-dropdown"` 속성을 버튼에 사용해 주어야 합니다. 버튼에 해당 속성을 사용해 주게 되면 이벤트가 자동으로 바인딩되어 버튼 기능이 활성화 됩니다.
+
+##### Basic select
+브라우져 기본 <select>로 열리게 되어 모바일에서도 사용성을 높여주며 option 선택 시 자바스크립트 코드와 함께 실행됩니다.
+```html
+<div class="xe-select-box xe-btn">
+    <label>xe-select-box 1</label>
+    <select>
+    <option>xe-select-box 1</option>
+    <option>xe-select-box 2</option>
+    <option>xe-select-box 3</option>
+    <option>xe-select-box 4</option>
+    </select>
+</div>
+```
+
+##### Dropdown
+data 속성을 통해서, 드롭다운 부모 목록 항목에 .open 클래스 토글링으로 드롭다운 메뉴를 토글합니다.
+
 ```html
 <!-- html -->
 <div class="xe-dropdown">
@@ -242,6 +260,67 @@ dropdown메뉴를 생성하는 UI 컴포넌트입니다. html마크업을 통해
     </ul>
 </div>
 ```
+
+##### Label select
+2개 이상의 option을 선택할 수 있으며, option 리스트가 많은 경우를 대비하여 검색 기능을 제공합니다.
+```html
+<div class="xe-select-label">
+    <div class="label-input">
+        <ul>
+            <li>
+                <span class="label-choice">ie9<button type="button"><i class="xi-close"></i></button></span>
+            </li>
+            <li>
+                <span class="label-choice">safari<button type="button"><i class="xi-close"></i></button></span>
+            </li>
+            <li>
+                <span class="label-choice">chrome<button type="button"><i class="xi-close"></i></button></span>
+            </li>
+            <li><input type="text" class="search-label"></li>
+        </ul>
+    </div>
+    <div class="label-list">
+        <div class="label-division">
+            <strong>그룹핑 제목(그룹이 하나일 경우 제외)</strong>
+            <ul>
+                <li><a href="#">IE9</a></li>
+                <li><a href="#">IE10</a></li>
+            </ul>
+        </div>
+        <div class="label-division">
+            <strong>그룹핑 제목(그룹이 하나일 경우 제외)</strong>
+            <ul>
+                <li><a href="#">safari</a></li>
+                <li><a href="#">chrome</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+```
+##### outline-off
+.outline-off 클래스를 추가하여 BG 없어 border로만 이루어져 있는 dropdown 스타일을 사용할 수 있습니다.
+```html
+<div class="xe-select-box xe-btn outline-off">
+    <label>xe-select-box 1</label>
+    <select>
+    <option>xe-select-box 1</option>
+    <option>xe-select-box 2</option>
+    <option>xe-select-box 3</option>
+    <option>xe-select-box 4</option>
+    </select>
+</div>
+
+<div class="xe-dropdown outline-off">
+    <button class="xe-btn" type="button" data-toggle="xe-dropdown">xe-dropdown 1</button>
+    <ul class="xe-dropdown-menu">
+    <li><a href="#" class="on">xe-dropdown 1</a></li>
+    <li><a href="#">xe-dropdown 2</a></li>
+    <li><a href="#">xe-dropdown 3</a></li>
+    <li><a href="#">xe-dropdown 4</a></li>
+    </ul>
+</div>
+```
+
 ```javascript
 //javascript
 $('[data-toggle=xe-dropdown]').xeDropdown();
@@ -255,6 +334,7 @@ modal창을 생성하는 UI 컴포넌트입니다. html마크업을 통해서 �
 * show
 * remote
 
+모달의 기본 구조는 `.xe-modal-header`, `.xe-modal-body`, `.xe-modal-footer`로 구성되어 있습니다.
 
 ```html
 <div class="xe-example">
@@ -279,6 +359,51 @@ modal창을 생성하는 UI 컴포넌트입니다. html마크업을 통해서 �
     </div>
 </div>
 ```
+
+`.xe-modal-lg`, `.xe-modal-sm` 클래스를 통해 모달 사이지를 지정할 수 있습니다.
+
+```html
+<div class="xe-modal fade" id="modal-sm">
+    <div class="xe-modal-dialog xe-modal-sm">
+        <div class="xe-modal-content">
+            <div class="xe-modal-header">
+                <button type="button" class="btn-close" data-dismiss="xe-modal" aria-label="Close"><i class="xi-close"></i></button>
+                <strong class="xe-modal-title">Modal title</strong>
+            </div>
+            <div class="xe-modal-body">
+                <p>
+                    modal-body ...
+                </p>
+            </div>
+            <div class="xe-modal-footer">
+                <button type="button" class="xe-btn xe-btn-secondary" data-dismiss="xe-modal">취소</button>
+                <button type="button" class="xe-btn xe-btn-primary" data-dismiss="xe-modal">저장</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="xe-modal fade" id="modal-lg">
+    <div class="xe-modal-dialog xe-modal-lg">
+        <div class="xe-modal-content">
+            <div class="xe-modal-header">
+                <button type="button" class="btn-close" data-dismiss="xe-modal" aria-label="Close"><i class="xi-close"></i></button>
+                <strong class="xe-modal-title">Modal title</strong>
+            </div>
+            <div class="xe-modal-body">
+                <p>
+                    modal-body ...
+                </p>
+            </div>
+            <div class="xe-modal-footer">
+                <button type="button" class="xe-btn xe-btn-secondary" data-dismiss="xe-modal">취소</button>
+                <button type="button" class="xe-btn xe-btn-primary" data-dismiss="xe-modal">저장</button>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+modal생성시 자바스크립트 `$(selector).xeModal()`를 호출하여 modal을 생성합니다. 
 ```javascript
 $('#modal').xeModal();
 ```
@@ -286,21 +411,54 @@ $('#modal').xeModal();
 #### $(selector).xeTooltip( options )
 tooltip을 생성하는 UI 컴포넌트입니다. html마크업을 통해서 해당 컴포넌트 기능을 사용할 경우에는 `data-toggle="xe-tooltip"` 속성을 버튼에 사용해 주어야 합니다. 버튼에 해당 속성을 사용해 주게 되면 이벤트가 자동으로 바인딩되어 버튼 기능이 활성화 됩니다.
 ##### options (object)
-* animation
-* container
-* delay
-* html
-* placement
-* selector
-* template
-* title
-* trigger
-* viewport
-
+* animation (boolean)
+* container (string|false)
+* delay (number|object)
+* html (boolean)
+* placement (string|function)
+* selector (string)
+* template (string)
+* title (string|element|function)
+* trigger (string)
 
 ```html
 <button type="button" class="xe-btn xe-btn-success" data-toggle="xe-tooltip" data-placement="left" title="Tooltip on left">xe-tooltip on left</button>
 ```
+4가지 방향(위, 오른쪽, 아래, 왼쪽)으로 노출합니다.
+```html
+<div class="xe-tooltip left" role="tooltip">
+    <div class="xe-tooltip-arrow"></div>
+    <div class="xe-tooltip-inner">
+    Tooltip on the left
+    </div>
+</div>
+<div class="xe-tooltip top" role="tooltip">
+    <div class="xe-tooltip-arrow"></div>
+    <div class="xe-tooltip-inner">
+    Tooltip on the top
+    </div>
+</div>
+<div class="xe-tooltip bottom" role="tooltip">
+    <div class="xe-tooltip-arrow"></div>
+    <div class="xe-tooltip-inner">
+    Tooltip on the bottom
+    </div>
+</div>
+<div class="xe-tooltip right" role="tooltip">
+    <div class="xe-tooltip-arrow"></div>
+    <div class="xe-tooltip-inner">
+    Tooltip on the right
+    </div>
+</div>
+```
+title 속성을 통해 totltip 내용을 노출합니다.
+```html
+<button type="button" class="xe-btn xe-btn-success" data-toggle="xe-tooltip" data-placement="left" title="Tooltip on left">xe-tooltip on left</button>
+<button type="button" class="xe-btn xe-btn-success" data-toggle="xe-tooltip" data-placement="top" title="Tooltip on top">xe-tooltip on top</button>
+<button type="button" class="xe-btn xe-btn-success" data-toggle="xe-tooltip" data-placement="bottom" title="Tooltip on bottom">xe-tooltip on bottom</button>
+<button type="button" class="xe-btn xe-btn-success" data-toggle="xe-tooltip" data-placement="right" title="Tooltip on right">xe-tooltip on right</button>
+```
+javascript에서 xeTooltop을 호출하여 실행합니다.
 ```javascript
 $('[data-toggle="xe-tooltip"]').xeTooltip();
 ```
@@ -309,13 +467,13 @@ $('[data-toggle="xe-tooltip"]').xeTooltip();
 
 ```html
 <div class="images" data-toggle="xe-lightbox" data-selector="img">
-       <img src="sample/img/@sample_img.jpg">
-       <img src="sample/img/@sample_img2.jpg">
-       <img src="sample/img/@sample_img3.jpg">
-       <img src="sample/img/@sample_img4.jpg">
-       <img src="sample/img/@sample_img5.jpg">
-       <img src="sample/img/@sample_img6.jpg">
-       <img src="sample/img/@sample_img7.jpg">
+   <img src="sample/img/@sample_img.jpg">
+   <img src="sample/img/@sample_img2.jpg">
+   <img src="sample/img/@sample_img3.jpg">
+   <img src="sample/img/@sample_img4.jpg">
+   <img src="sample/img/@sample_img5.jpg">
+   <img src="sample/img/@sample_img6.jpg">
+   <img src="sample/img/@sample_img7.jpg">
 </div>
 ```
 ```javascript
