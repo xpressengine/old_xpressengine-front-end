@@ -159,22 +159,78 @@ function test(response) {
 
 ### XE.page(url, target, options, callback)
 target영역에 html을 로드하여 화면에 랜더링합니다. response로 html 및 js, css파일들의 경로를 전달 받습니다.
-##### 동작 순서
+#### 동작 순서
 1. js, css파일 로드
 2. html 로드
 3. callback 실행 
 
-#### url (string)
+####arguments
+##### url (string)
 ajax가 호출될 url
-#### target (string)
+##### target (string)
 html이 append될 selector 
-#### options (object)
+##### options (object)
 * data (object) 전송 파라미터
 * type (string) http method 'get'|'post'
-* addType (string) target에 response html을 넣어주는 방식의 타입 `append`, `prepend`, `before`, `after`. 옵션을 명시하지 않을 경우 jquery fn.html을 사용한다.
-
-#### callback (function)
+* addType (string) target에 response html을 넣어주는 방식의 타입 `append`, `prepend`, `before`, `after`. 옵션을 명시하지 않을 경우 target영역에 html을 덮어 넣습니다.
+  
+##### callback (function)
 html append이후에 실행될 callback
+
+#### 마크업에 `data-*` attruibute를 이용한 XE.page 사용 방법
+xe.page.js파일을 로드하면 `data-toggle="xe-page"` attribute를 사용한 DOM에 click이벤트를 바인딩 합니다. 
+
+* `assets/core/common/xe.page.js`의 파일을 로드합니다.
+* 클릭되는 DOM에 `data-toggle='xe-page'` attribute를 명시하여야 합니다.
+* href or data-url에 ajax를 요청할 url정보를 명시합니다.
+* data-target으로 append할 영역의 selector를 명시합니다.
+* data-callback으로 callback명을 명시합니다.
+* data-params로 요청시 전송할 파라미터 정보를 넣어줍니다. (JSON string)
+
+```html
+<a href="/api/test" 
+    data-toggle="xe-page" 
+    data-params="{'param1':'value1'}" 
+    data-target="#target" 
+    data-callback="callbackFunc">[XE.page 실행]</a>
+```
+
+### XE.pageModal(url, options, callback)
+xeModal을 실행하여 html을 해당 modal영역에 랜더링합니다. response로 html 및 js, css파일들의 경로를 전달 받습니다.
+
+#### 동작 순서
+1. js, css파일 로드
+2. html로드
+3. callback 실행
+4. xeModal 실행
+
+####arguments
+##### url (string)
+ajax가 호출될 url
+##### options (object)
+* data (object) 전송 파라미터
+* type (string) http method 'get'|'post'
+  
+##### callback (function)
+html append이후에 실행될 callback
+
+#### 마크업에 `data-*` attruibute를 이용한 XE.pageModal 사용 방법
+xe.page.js파일을 로드하면 `data-toggle="xe-page"` attribute를 사용한 DOM에 click이벤트를 바인딩 합니다. 
+
+* `assets/core/common/xe.page.js`의 파일을 로드합니다.
+* 클릭되는 DOM에 `data-toggle='xe-page-modal'` attribute를 명시하여야 합니다.
+* href or data-url에 ajax를 요청할 url정보를 명시합니다.
+* data-target으로 append할 영역의 selector를 명시합니다.
+* data-callback으로 callback명을 명시합니다.
+* data-params로 요청시 전송할 파라미터 정보를 넣어줍니다. (JSON string)
+
+```html
+<a href="/api/test" 
+    data-toggle="xe-page" 
+    data-params="{'param1':'value1'}" 
+    data-target="#target" 
+    data-callback="callbackFunc">[XE.page 실행]</a>
+```
 
 ### XE.validate( $form )
 해당 폼 요소에 있는 값들의 유효성을 체크합니다. 마크업에 있는 element의 data-valid attribute에 정의된 유효성을 체크합니다. 유효성 체크를 하고자 하는 내용을 '|'구분하여 지정하면 여러개의 유효성을 체크하게되고 유효성이 통과하지 못할 경우 메시지를 노출합니다.
