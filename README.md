@@ -185,7 +185,7 @@ xe.page.js파일을 로드하면 `data-toggle="xe-page"` attribute를 사용한 
 * href or data-url에 ajax를 요청할 url정보를 명시합니다.
 * data-target으로 append할 영역의 selector를 명시합니다.
 * data-callback으로 callback명을 명시합니다.
-* data-params로 요청시 전송할 파라미터 정보를 넣어줍니다. (JSON string)
+* data-params로 요청시 전송할 파라미터 정보를 명시합니다. (JSON string)
 
 ```html
 <a href="/api/test" 
@@ -215,21 +215,19 @@ ajax가 호출될 url
 html append이후에 실행될 callback
 
 #### 마크업에 `data-*` attruibute를 이용한 XE.pageModal 사용 방법
-xe.page.js파일을 로드하면 `data-toggle="xe-page"` attribute를 사용한 DOM에 click이벤트를 바인딩 합니다. 
+xe.page.js파일을 로드하면 `data-toggle="xe-page-modal"` attribute를 사용한 DOM에 click이벤트를 바인딩 합니다. 
 
 * `assets/core/common/xe.page.js`의 파일을 로드합니다.
 * 클릭되는 DOM에 `data-toggle='xe-page-modal'` attribute를 명시하여야 합니다.
 * href or data-url에 ajax를 요청할 url정보를 명시합니다.
-* data-target으로 append할 영역의 selector를 명시합니다.
 * data-callback으로 callback명을 명시합니다.
-* data-params로 요청시 전송할 파라미터 정보를 넣어줍니다. (JSON string)
+* data-params로 요청시 전송할 파라미터 정보를 명시합니다. (JSON string)
 
 ```html
 <a href="/api/test" 
-    data-toggle="xe-page" 
+    data-toggle="xe-page-modal" 
     data-params="{'param1':'value1'}" 
-    data-target="#target" 
-    data-callback="callbackFunc">[XE.page 실행]</a>
+    data-callback="callbackFunc">[XE.pageModal 실행]</a>
 ```
 
 ### XE.validate( $form )
