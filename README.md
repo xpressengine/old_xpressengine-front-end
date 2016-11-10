@@ -126,7 +126,7 @@ XE form은 마크업된 form요소의 attribute를 통해 ajax를 사용하는 �
 <script type='text/javascript' src='assets/core/xe-ui-component/js/xe-form.js'></script>
 ```
 
-xe-form.js파일을 로드한 상태에서 form마크업시 **data-submit='xe-ajax'** attribute를 사용하게되면 해당 form이 submit될 때 XE.ajax가 실행됩니다.
+xe-form.js파일을 로드한 상태에서 form마크업시 **data-submit='xe-ajax'** attribute를 사용하게 되면 해당 form이 submit될 때 XE.ajax가 실행됩니다.
 
 ####Attributes
 * data-submit : XE form을 사용하기 위한 **필수** 요소
@@ -157,7 +157,17 @@ function test(response) {
 }
 ```
 
-## XE UI Components
+### XE.page(url, target, options, callback)
+#### url (string)
+ajax가 호출될 url
+#### target (string)
+html이 append될 selector 
+#### options (object)
+* data (object) 전송 파라미터
+* type (string) http method 'get'|'post'
+* addType (string) target에 response html을 넣어주는 방식의 타입 `append`, `prepend`, `before`, `after`. 옵션을 명시하지 않을 경우 jquery fn.html을 사용한다.
+
+#### callback (function)
 
 ### XE.validate( $form )
 해당 폼 요소에 있는 값들의 유효성을 체크합니다. 마크업에 있는 element의 data-valid attribute에 정의된 유효성을 체크합니다. 유효성 체크를 하고자 하는 내용을 '|'구분하여 지정하면 여러개의 유효성을 체크하게되고 유효성이 통과하지 못할 경우 메시지를 노출합니다.
@@ -215,6 +225,8 @@ function test(response) {
 ```javascript
 XE.formValidate($('#form'));
 ```
+
+## XE UI Components
 
 ### toast popup
 #### XE.toast( type, message )
