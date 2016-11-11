@@ -583,23 +583,23 @@ DynamicLoadManager.jsLoad('assets/common/utils.js', function() {
 * complete (function)
 
 ```javascript
-  DynamicLoadManager.jsLoadMultiple([
-      '/assets/test/test1.js',
-      '/assets/test/test2.js',
-      '/assets/test/test3.js',
-      '/assets/test/test4.js',
-      '/assets/test/test5.js'
-  ], {
-      load: function() {
-        console.log('loaded');
-      },
-      error: function() {
-        console.log('error');
-      },
-      complete: function() {
-        console.log('complete');
-      }
-  });
+DynamicLoadManager.jsLoadMultiple([
+    '/assets/test/test1.js',
+    '/assets/test/test2.js',
+    '/assets/test/test3.js',
+    '/assets/test/test4.js',
+    '/assets/test/test5.js'
+], {
+    load: function() {
+      console.log('loaded');
+    },
+    error: function() {
+      console.log('error');
+    },
+    complete: function() {
+      console.log('complete');
+    }
+});
 ```
 
 #### DynamicLoadManager.cssLoad( url [, load] [, error] )
@@ -611,9 +611,9 @@ css파일을 로드하고 요청 성공시 load콜백을 실행합니다.
 ##### error (function)
 로드 실패시 호출될 콜백
 ```javascript
-  DynamicLoadManager.cssLoad('/assets/test/test.css', function() {
-    console.log('loaded');
-  });
+DynamicLoadManager.cssLoad('/assets/test/test.css', function() {
+  console.log('loaded');
+});
 ```
 ### utils
 #### Utils.asset( url )
@@ -622,3 +622,4 @@ css파일을 로드하고 요청 성공시 load콜백을 실행합니다.
 var url = Utils.asset('/asset/test');
 console.log(url) //http://localhost:port/asset/test
 ```
+
