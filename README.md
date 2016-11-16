@@ -623,6 +623,36 @@ var url = Utils.asset('/asset/test');
 console.log(url) //http://localhost:port/asset/test
 ```
 
+#### Utils.isImage( mimeType )
+mime type으로 웹용 이미지 타입인지 확인하여 true, false를 리턴해줍니다.
+##### mimeType (string)
+- image/jpg
+- image/jpeg
+- image/png
+- image/gif
+
+```javascript
+Utils.isImage('image/jpg') // true
+Utils.isImage('image/bmp') // false
+```
+
+#### Utils.isURL( url ) 
+해당 문자열이 프로토콜을 포함한 url인지 체크하여 true, false를 리턴해줍니다.
+
+```javascript
+Utils.isURL('http://www.xpressengine.io') // true
+Utils.isURL('www.xpressengine.io') // false
+```
+
+#### Utils.formatSizeUnits( bytes )
+byte단위를 KB, MB, GB로 변환하여 리턴해 줍니다.
+
+```javascript
+Utils.formatSizeUnits(1024) // 1.00KB
+Utils.formatSizeUnits(1024 * 1024) // 1.00MB
+Utils.formatSizeUnits(1024 * 1024 * 1024) // 1.00GB
+```
+
 ## Javascript Coding Convention
 자바스크립트 코딩 컨벤션은 airbnb의 룰을 따르고 있습니다.
 
