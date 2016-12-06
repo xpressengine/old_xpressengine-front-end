@@ -1,6 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-   * XE.Lang
+   * [XE.Lang](README.md#xelang)
 * [First Chapter](chapter1.md)
 
