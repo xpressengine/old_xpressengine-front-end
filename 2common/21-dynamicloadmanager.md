@@ -1,9 +1,9 @@
-### dynamicLoadManager
-DynamicLoadManager는 script, css파일등을 비동기로 로드하고 스크립트 중복 로드를 방지합니다.
-
 # 2.1 DynamicLoadManager
+DynamicLoadManager는 script, css파일등을 비동기로 로드하고 중복 로드를 방지합니다.
+
 ## DynamicLoadManager.jsLaod( url [, load] [, error] )
 javascript파일을 로드하고 요청 성공시 load콜백을 실행합니다.
+
 ##### url (string)
 로드할 스크립트의 url주소
 ##### load (function)
@@ -48,7 +48,7 @@ DynamicLoadManager.jsLoadMultiple([
 
 #### DynamicLoadManager.cssLoad( url [, load] [, error] )
 css파일을 로드하고 요청 성공시 load콜백을 실행합니다.
-##### url (string)
+##### url (string) **필수**
 로드할 스크립트의 url주소
 ##### load (function)
 로드 성공시 호출될 콜백
