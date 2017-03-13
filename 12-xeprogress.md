@@ -13,9 +13,3 @@ Progress bar를 생성하는 UI를 종료합니다.
 ```javascript
 XE.Progress.done(); // progress bar 제거
 ```
-
-<script>
-    alert('test');
-    console.log('test!!');
-</script>
-
