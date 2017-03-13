@@ -1,4 +1,17 @@
-# 2.3 Form Validation
+# 2.3 Form Validator
+
+Form Validator를 사용하기 위해서는 **validator.js**파일을 로드하여야 합니다.
+
+```php
+//blade파일(php)에서 로드할 경우
+{{ XeFrontend::js('assets/core/common/js/validator.js')->appendTo('body')->load() }}
+
+```
+```html
+<-- html에서 로드할 경우 -->
+<script type='text/javascript' src='assets/core/common/js/validator.js'></script>
+```
+
 ## XE.formValidate( $form )
 해당 폼 요소에 있는 값들의 유효성을 체크합니다. 마크업에 있는 element의 data-valid attribute에 정의된 유효성을 체크합니다. 유효성 체크를 하고자 하는 내용을 '|'구분하여 지정하면 여러개의 유효성을 체크하게되고 유효성이 통과하지 못할 경우 메시지를 노출합니다.
 
