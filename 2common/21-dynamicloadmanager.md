@@ -1,4 +1,6 @@
 # 2.1 DynamicLoadManager
+---
+
 DynamicLoadManager는 script, css파일등을 비동기로 로드하고 중복 로드를 방지합니다.
 
 ## DynamicLoadManager.jsLaod( url [, load] [, error] )

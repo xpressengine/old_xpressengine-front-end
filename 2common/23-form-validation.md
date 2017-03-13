@@ -1,4 +1,5 @@
 # 2.3 Form Validator
+---
 
 Form Validator를 사용하기 위해서는 **validator.js**파일을 로드하여야 합니다.
 

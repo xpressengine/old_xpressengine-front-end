@@ -1,4 +1,17 @@
 # 2.4 Page
+---
+
+XE.page의 기능을 사용하기 위해서는 **xe-page.js**파일을 로드하여야 합니다.
+
+```php
+//blade파일(php)에서 로드할 경우
+{{ XeFrontend::js('assets/core/xe-ui-component/js/xe-page.js')->appendTo('body')->load() }}
+
+```
+```html
+<-- html에서 로드할 경우 -->
+<script type='text/javascript' src='assets/core/xe-ui-component/js/xe-page.js'></script>
+```
 
 ## XE.page(url, target, options, callback)
 target영역에 html을 로드하여 화면에 랜더링합니다. response로 html 및 js, css파일들의 경로를 전달 받습니다.

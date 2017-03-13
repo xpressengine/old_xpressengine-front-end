@@ -1,4 +1,6 @@
 # 2.2 Form
+---
+
 XE form은 마크업된 form요소의 attribute를 통해 ajax를 사용하는 방법입니다. 우선 XE form을 사용하기 위해서는 xe-form.js 스크립트를 로드해야 합니다.
 
 ```php

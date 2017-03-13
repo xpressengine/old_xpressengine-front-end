@@ -1,4 +1,5 @@
 # 1.1 XE.Lang
+---
 
 ## XE.Lang.trans( id [, parameter] )
 설정되어 있는 언어에 등록되어 있는 다국어를 리턴해줍니다.

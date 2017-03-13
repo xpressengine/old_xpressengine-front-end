@@ -1,4 +1,5 @@
 # 1.3 XE.Request
+---
 
 ## XE.Request.get( url [, data] [, callback] [, dataType] )
 서버로부터 데이터를 전달 받습니다.
