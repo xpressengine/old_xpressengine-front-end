@@ -14,5 +14,6 @@ XE.Progress.done(); // progress bar 제거
 
 <script>
     alert('test');
+    console.log('test!!');
 </script>
 
