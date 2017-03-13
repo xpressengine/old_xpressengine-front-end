@@ -3,9 +3,9 @@
 * [Introduction](README.md)
 * [Introduction](introduction.md)
 * [1.Core](core.md)
-  * [1.1 Lang](lang.md)
-  * 1.2 Progress
-  * 1.3 Request
+  * [1.1 XE.Lang](lang.md)
+  * 1.2 XE.Progress
+  * 1.3 XE.Request
   * 1.4 ajax
 * 2.Common
   * 2.1 DynamicLoadManager
