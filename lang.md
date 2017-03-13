@@ -1,6 +1,7 @@
-# XE.Lang
+# 1.1 XE.Lang
+
 ## XE.Lang.trans( id [, parameter] )
-등록되어 있는 다국어를 리턴해줍니다.
+설정되어 있는 언어에 등록되어 있는 다국어를 리턴해줍니다.
 ### id (string)
 다국어가 정의된 key값을 지정합니다. ( 필수 요소 )
 ### parameter (object)
