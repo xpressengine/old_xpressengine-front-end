@@ -6,9 +6,8 @@
   * [1.1 XE.Lang](lang.md)
   * [1.2 XE.Progress](12-xeprogress.md)
   * [1.3 XE.Request](13-xerequest.md)
-  * [1.4 ajax](14-ajax.md)
 * [2.Common](2common.md)
-  * 2.1 DynamicLoadManager
+  * [2.1 DynamicLoadManager](2common/21-dynamicloadmanager.md)
   * 2.2 Form
   * 2.3 Form Validation
   * 2.4 Page
