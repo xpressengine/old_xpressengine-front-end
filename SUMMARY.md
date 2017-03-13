@@ -1,7 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-* [Introduction](introduction.md)
 * [1.Core](core.md)
   * [1.1 XE.Lang](lang.md)
   * [1.2 XE.Progress](12-xeprogress.md)
