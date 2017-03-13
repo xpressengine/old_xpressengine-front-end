@@ -8,9 +8,9 @@
   * [1.3 XE.Request](13-xerequest.md)
 * [2.Common](2common.md)
   * [2.1 DynamicLoadManager](2common/21-dynamicloadmanager.md)
-  * 2.2 Form
-  * 2.3 Form Validation
-  * 2.4 Page
+  * [2.2 Form](2common/22-form.md)
+  * [2.3 Form Validation](2common/23-form-validation.md)
+  * [2.4 Page](2common/24-page.md)
   * 2.5 Page Modal
 * 3.Components
   * 3.1 Lightbox
