@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* Core
+* * Core
 * Common
 * Components
 * Utils
