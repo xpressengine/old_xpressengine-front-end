@@ -2,11 +2,11 @@
 
 * [Introduction](README.md)
 * [Introduction](introduction.md)
-* Core
-  * [Lang](lang.md)
-  * Progress
-  * Request
-  * ajax
+* [1. Core](core.md)
+  * [1.1 Lang](lang.md)
+  * 1.2 Progress
+  * 1.3 Request
+  * 1.4 ajax
 * Common
   * DynamicLoadManager
   * Form
