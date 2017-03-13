@@ -4,7 +4,7 @@ DynamicLoadManager는 script, css파일등을 비동기로 로드하고 중복 �
 ## DynamicLoadManager.jsLaod( url [, load] [, error] )
 javascript파일을 로드하고 요청 성공시 load콜백을 실행합니다.
 
-##### url (string)
+##### url (string), 필수 요소 
 로드할 스크립트의 url주소
 ##### load (function)
 로드 성공시 호출될 콜백
@@ -20,7 +20,7 @@ DynamicLoadManager.jsLoad('assets/common/utils.js', function() {
 
 #### DynamicLoadManager.jsLoadMultiple( url[] [, callbackObj] )
 여러개의 javascript파일을 순차적으로 로드하고 요청 성공시 각각 load콜백을 실행합니다. 모든 파일이 로드되면 complete를 호출합니다.
-##### url (string)
+##### url (string), 필수 요소 
 ##### callbackObj (object)
 * load (function)
 * error (function)
@@ -48,7 +48,7 @@ DynamicLoadManager.jsLoadMultiple([
 
 #### DynamicLoadManager.cssLoad( url [, load] [, error] )
 css파일을 로드하고 요청 성공시 load콜백을 실행합니다.
-##### url (string) **필수**
+##### url (string), 필수 요소 
 로드할 스크립트의 url주소
 ##### load (function)
 로드 성공시 호출될 콜백
