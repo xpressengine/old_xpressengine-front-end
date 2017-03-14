@@ -18,11 +18,11 @@
   * [2.3 Form Validator](2common/23-form-validation.md)
   * [2.4 Page](2common/24-page.md)
   * [2.5 Page Modal](2common/25-page-modal.md)
-* 4.Utils
+* [4.Utils](4utils.md)
   * [4.1 Utils.asset](41-utilsasset.md)
   * [4.2 Utils.isImage](42-utilsisimage.md)
   * [4.3 Utils.isURL](43-utilsisurl.md)
   * [4.4 Utils.formatSizeUnits](44-utilsformatsizeunits.md)
-* [5.Build]  
+* [5.Build](5build.md)
 * [6.Javascript Coding Convention](5javascript-coding-convention.md)
 
