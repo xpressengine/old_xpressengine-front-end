@@ -39,7 +39,7 @@ Form Validator를 사용하기 위해서는 **validator.js**파일을 로드하�
   - min, max는 number 타입으로 지정합니다. radio button에서는 필수 체크시 **checked:1**로 표기 합니다.
 * alpha
   - 알파벳으로만 사용되는 필드 값을 체크합니다.
-* alphanum
+* alphanum 또는 alpha_num
   - 알파벳 또는 숫자 값을 체크합니다.
 * min
   - 최소 입력 글자를 체크합니다.
@@ -53,6 +53,42 @@ Form Validator를 사용하기 위해서는 **validator.js**파일을 로드하�
  - 숫자값만 입력되었는지 체크합니다.
 * between:min,max
  - 필드 값이 최소, 최대에 만족하는지 체크합니다.
+* accepted
+ - 필드의 값이 yes, on, 1, 또는 _true_이어야 합니다.
+* alpha_dash
+ - 필드의 값이 (숫자나 기호가 아닌) 알파벳[자음과 모음] 문자 및 숫자와 dash(-), underscore(_)로 이루어져야 합니다.
+* array
+ - 필드의 값이 배열형태이어야 합니다.
+* boolean
+ - 필드의 값이 반드시 true, false, 1, 0, "1", "0" 이어야 합니다.
+* date
+ - 필드의 값이 strtotime PHP 함수에서 인식할 수 있는 올바른 날짜여야 합니다.
+* date_format:format
+ - 필드의 값이 반드시 주어진 format과 일지해야 합니다.
+* digits:value
+ - 필드의 값이 반드시 숫자여야 하고, 길이가 value이어야 합니다
+* digits_between:min,max
+ - 필드의 값이 주어진 min과 max사이의 길이를 가져야 합니다.
+* filled
+ - 필드가 존재하는 경우 값이 비어있으면 안됩니다.
+* integer
+ - 필드의 값이 정수여야 합니다.
+* ip
+ - 필드의 값이 IP 주소여야 합니다.
+* ipv4
+ - 필드의 값이 IPv4 주소여야 합니다.
+* ipv6
+ - 필드의 값이 IPv6 주소여야 합니다.
+* mimes:foo,bar...
+ - 파일의 MIME 타입이 주어진 확장자 리스트 중에 하나와 일치해야 합니다.
+* nullable
+ - 필드의 값은 null 일 수 있습니다. 
+* regex:pattern
+ - 필드의 값이 주어진 정규식 표현과 일치해야 합니다.
+* json
+ - 필드의 값이 유효한 JSON 문자열이어야 합니다.
+* string
+ - 필드의 값이 반드시 문자열이어야 합니다.
 
 ```html
 <!-- XE form sample -->
