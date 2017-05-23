@@ -37,7 +37,6 @@ gulp관련 설정들은 `gulpfile.babel.js`에 정의되어 있고 `/resources/g
 
 ## Webpack
 webpack관련 설정은 `webpack.config.js`에 정의되어 있습니다. debug 모드로 빌드하게 될 경우에는 기본설정외에 `webpack.dev.config.js` 설정을 읽어드려 실행하고 production 모드로 빌드하게 될 경우에는 `webpack.prod.config.js`의 설정을 읽어드려 실행합니다.
-XE3 프론트엔드의 일부 컴포넌트들은 React, es2015코드를 사용하고 있습니다. webpack을 통해 react 
 
 ## 프론트엔드 빌드 모드
 
