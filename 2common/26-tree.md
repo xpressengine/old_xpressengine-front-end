@@ -84,6 +84,5 @@ Node를 추가할 wrapper
 * #### nodeTemplate (function)
 list item 마크업 내에 생성되는 html을 리턴해주는 function
 
-
 ### callback 
 노드를 추가한 이후에 호출될 callback
