@@ -1,4 +1,5 @@
 # 2.5 Page Modal
+
 ---
 
 XE.page의 기능을 사용하기 위해서는 **xe-page.js**파일을 로드하여야 합니다.
@@ -6,40 +7,48 @@ XE.page의 기능을 사용하기 위해서는 **xe-page.js**파일을 로드하
 ```php
 //blade파일(php)에서 로드할 경우
 {{ XeFrontend::js('assets/core/xe-ui-component/js/xe-page.js')->appendTo('body')->load() }}
-
 ```
+
 ```html
 <-- html에서 로드할 경우 -->
 <script type='text/javascript' src='assets/core/xe-ui-component/js/xe-page.js'></script>
 ```
 
-### XE.pageModal(url, options, callback)
+### XE.pageModal\(url, options, callback\)
+
 xeModal을 실행하여 html을 해당 modal영역에 랜더링합니다. response로 html 및 js, css파일들의 경로를 전달 받습니다.
 
 #### 동작 순서
+
 1. js, css파일 로드
 2. html로드
 3. callback 실행
 4. xeModal 실행
 
-####arguments
-##### url (string)
+#### arguments
+
+##### url \(string\)
+
 ajax가 호출될 url
-##### options (object)
-* data (object) 전송 파라미터
-* type (string) http method 'get'|'post'
-  
-##### callback (function)
+
+##### options \(object\)
+
+* data \(object\) 전송 파라미터
+* type \(string\) http method 'get'\|'post'
+
+##### callback \(function\)
+
 html append이후에 실행될 callback
 
 #### 마크업에 `data-*` attruibute를 이용한 XE.pageModal 사용 방법
-xe.page.js파일을 로드하면 `data-toggle="xe-page-modal"` attribute를 사용한 DOM에 click이벤트를 바인딩 합니다. 
+
+xe.page.js파일을 로드하면 `data-toggle="xe-page-modal"` attribute를 사용한 DOM에 click이벤트를 바인딩 합니다.
 
 * `assets/core/common/xe.page.js`의 파일을 로드합니다.
 * 클릭되는 DOM에 `data-toggle='xe-page-modal'` attribute를 명시하여야 합니다.
 * href or data-url에 ajax를 요청할 url정보를 명시합니다.
 * data-callback으로 callback명을 명시합니다.
-* data-params로 요청시 전송할 파라미터 정보를 명시합니다. (JSON string)
+* data-params로 요청시 전송할 파라미터 정보를 명시합니다. \(JSON string\)
 
 ```html
 <a href="/api/test" 
@@ -47,4 +56,6 @@ xe.page.js파일을 로드하면 `data-toggle="xe-page-modal"` attribute를 사�
     data-params="{'param1':'value1'}" 
     data-callback="callbackFunc">[XE.pageModal 실행]</a>
 ```
+
+
 
