@@ -27,7 +27,7 @@ gulp관련 설정들은 `gulpfile.babel.js`에 정의되어 있고 `/resources/g
 
 >gulp assets:chunk
 
-* jscs : XE3 프론트엔드는 airbnb의 코딩컨벤션을 유지하고 있습니다. jscs 테스크는 airbnb의 코딩컨벤션에 준수하는 체크합니다.
+* jscs : XE3 프론트엔드는 airbnb의 코딩컨벤션을 유지하고 있습니다. jscs 테스크는 airbnb의 코딩컨벤션에 준수하는지 체크합니다.
 
 >gulp jscs
 
