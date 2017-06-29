@@ -1,17 +1,9 @@
 # 2.3 Form Validator
 ---
+validator는 `assets/core/common/js/xe.bundle.js`에 번들링되어져 있으며 `xe.bundle.js`는 XE3에서 기본적으로 로드되도록 구성되어 있습니다.
 
-Form Validator를 사용하기 위해서는 **validator.js**파일을 로드하여야 합니다.
 
-```php
-//blade파일(php)에서 로드할 경우
-{{ XeFrontend::js('assets/core/common/js/validator.js')->appendTo('body')->load() }}
 
-```
-```html
-<-- html에서 로드할 경우 -->
-<script type='text/javascript' src='assets/core/common/js/validator.js'></script>
-```
 
 ## XE.formValidate( $form )
 해당 폼 요소에 있는 값들의 유효성을 체크합니다. 마크업에 있는 element의 data-valid attribute에 정의된 유효성을 체크합니다. 유효성 체크를 하고자 하는 내용을 '|'구분하여 지정하면 여러개의 유효성을 체크하게되고 유효성이 통과하지 못할 경우 메시지를 노출합니다.
@@ -113,3 +105,64 @@ Form Validator를 사용하기 위해서는 **validator.js**파일을 로드하�
 XE.formValidate($('#form'));
 ```
 
+## XE.validator
+form validation을 위한 모듈로 유효성체크를 하기 위한 세팅 및 체크로직 추가 등을 할 수 있습니다.
+
+### XE.validator.setRules(ruleName, rules)
+rule을 정의하고 등록합니다. 필요한 rule의 다국어 메시지가 로드되지 않은 상태일경우 ajax로 필요 메시지를 요청하는 로직이 포함되어 있습니다. 룰세팅 이후에 `XE.validator.init` 메소드를 호출합니다.
+
+```javascript
+XE.validator.setRules('formCheckRule', {
+ "id":"required|between:10,20",
+ "file":"mimes:jpg,gif,png|between:0,2048",
+ "name":"required"
+});
+```
+
+#### ruleName (string)
+정의 하는 rule의 명칭입니다. form요소의 data-rule과 동일하게 작성되어야 하며 form마다 다르게 작성될 수 있습니다.
+
+#### rules (object)
+유효성 체크를 위한 rule파라미터 입니다. 폼 필드의 name속성과 룰들이 등록됩니다.
+`ex){"id":"required|between:10,20","file":"mimes:jpg,gif,png|between:0,2048","name":"required"}`
+
+### XE.validator.init(ruleName)
+[data-rule=ruleName]으로 정의된 폼 요소에 submit이벤트시 해당 폼의 유효성 체크를 할 수 있도록 이벤트를 바인딩 합니다.
+
+#### ruleName (string)
+
+### XE.validator.getRuleName($form)
+해당 폼 요소의 ruleName을 리턴합니다.
+
+#### $form (jquery object)
+
+### XE.validator.check($form)
+해당 폼에 정의된 rule을 체크합니다.
+
+#### $form (jquery object)
+
+### XE.validator.validate($form, name, rule)
+$form 폼 요소의 name필드가 rule의 형태로 유효한지 체크합니다.
+#### $form (jquery object)
+form element
+#### name (string)
+필드명
+#### rule (string)
+rule
+
+### XE.validator.put(name, callback)
+유효성을 체크할 validator를 추가합니다. 
+#### name (string)
+추가할 validator 명칭 `ex)requiredAlpha`
+#### callback (function)
+validation이 실행될 때 호출할 callback. validation이 실패할 경우 false를 리턴하는 로직이 포함되어야 합니다.
+
+### Validator.error($element, message, replaceStrMap)
+유효성체크 실패 시 호출하는 함수로 오류 메시지를 노출합니다.
+
+#### $element (jquery object)
+오류를 노출할 element
+#### message (string)
+오류 메시지
+#### replaceStrMap (object)
+오류 메시지중 치환된 문자열 object
