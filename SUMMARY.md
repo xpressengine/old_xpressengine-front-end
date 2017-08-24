@@ -19,6 +19,7 @@
   * [3.4 Modal](modal.md)
   * [3.5 Tooltip](35-tooltip.md)
   * [3.6 LimitText](36-limittext.md)
+  * [3.7 XeInfinite](37-xeinfinite.md)
 * [4.Utils](4utils.md)
   * [4.1 Utils.asset](41-utilsasset.md)
   * [4.2 Utils.isImage](42-utilsisimage.md)
