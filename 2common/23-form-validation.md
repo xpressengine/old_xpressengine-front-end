@@ -67,14 +67,8 @@ validator는 `assets/core/common/js/xe.bundle.js`에 번들링되어져 있으�
  - 필드의 값이 정수여야 합니다.
 * ip
  - 필드의 값이 IP 주소여야 합니다.
-* ipv4
- - 필드의 값이 IPv4 주소여야 합니다.
-* ipv6
- - 필드의 값이 IPv6 주소여야 합니다.
 * mimes:foo,bar...
  - 파일의 MIME 타입이 주어진 확장자 리스트 중에 하나와 일치해야 합니다.
-* nullable
- - 필드의 값은 null 일 수 있습니다. 
 * regex:pattern
  - 필드의 값이 주어진 정규식 표현과 일치해야 합니다.
 * json
@@ -82,16 +76,19 @@ validator는 `assets/core/common/js/xe.bundle.js`에 번들링되어져 있으�
 * string
  - 필드의 값이 반드시 문자열이어야 합니다.
 
+### 3. data-valid-name
+validator들은 `resources/lang/ko|en/validation.php`에 있는 다국어 메시지를 validation 실패시의 메시지로 사용하며 `:attribute` 기본값으로 엘리먼트의 name속성을 사용하고 있습니다. validation 실패 메시지에서 치환되는 `:attribute` 부분을 이 속성의 문자열로 치환합니다.
+
 ```html
 <!-- XE form sample -->
 <form id='form' action="/users" method="POST" data-rule-alert-type="toast">
     <div class="xe-form-group">
         <label for="id">ID</label>
-        <input type="text" name="id" class="xe-form-control" id="id" data-valid='required|alphanum' />
+        <input type="text" name="id" class="xe-form-control" id="id" data-valid='required|alphanum' data-valid-name='아이디' />
     </div>
     <div class="xe-form-group">
         <label for="password">Password</label>
-        <input type="password" name="password" class="xe-form-control" id="password" data-valid='required|alphanum' />
+        <input type="password" name="password" class="xe-form-control" id="password" data-valid='required|alphanum' data-valid-name='비밀번호' />
     </div>
     <div>
         <label for='chk1' class="checkbox-inline"><input name="check[]" id='chk1' type="checkbox" value='apple' data-valid='checked:1-3' />사과</label>

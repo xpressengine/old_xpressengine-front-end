@@ -30,7 +30,7 @@ return [
 //javascript
 var name = XE.Lang.trans('xe::name');
 var email = XE.Lang.trans('xe::email');
-var msg = XE.Lang.trans('xe::msgHello', {msg: 반갑습니다.});
+var msg = XE.Lang.trans('xe::msgHello', {msg: '반갑습니다.'});
 console.log(name) // 이름 or Name
 console.log(email) // 이메일 or E-mail
 console.log(msg) // 안녕하세요. 반갑습니다.
