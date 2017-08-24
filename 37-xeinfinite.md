@@ -14,7 +14,7 @@ XeInfinite를 초기화합니다. 필요한 라이브러리를 로드하고 데�
 #### - wrapper (string) 
 XeInfinite를 나타낼 상위 요소 셀럭터를 나타냅니다.
 #### - template (string)
-반복될 template 문자열 형태로 나타냅니다. 템플릿의 사용되는 변수들은 options의 data 오브젝트의 property와 맵핑되어 치환됩니다.
+반복될 template을 문자열 형태로 나타냅니다. 템플릿의 사용되는 변수들은 options의 data 오브젝트의 property와 맵핑되어 치환됩니다.
 #### - data (array< object >)
 template에 사용될 초기 데이터를 나타냅니다. object로 구성된 리스트를 사용합니다.
 #### - loadRowCount (number)
@@ -36,3 +36,49 @@ init시 옵션으로 구현된 addItem을 호출한다.
 ## XeInfinite.setPrevent(flag)
 onGetItems의 호출을 방지하는 flag를 설정한다.
 ### flag (boolean)
+
+##example
+```javascript
+var template = [
+	'<a href="{{profilePage}}" class="list-inner-item">',
+		'<div class="img-thumbnail"><img src="{{profileImage}}" width="48" height="48" alt="{{displayName}}" /></div>',
+		'<div class="list-text">',
+			'<p>{{displayName}}</p>',
+		'</div>',
+	'</a>',
+].join("\n");
+
+
+var onGetRows = function () {
+	XeInfinite.setPrevent(true);
+
+	XE.ajax({
+		url: '/api/items',
+		type: 'get',
+		dataType: 'json',
+		data: {},
+		success: function(data) {
+			if(data.nextStartId === 0) {
+				XeInfinite.setPrevent(true);
+			} else {
+				XeInfinite.setPrevent(false);
+			}
+
+			startId = data.nextStartId;
+
+			for(var k = 0, max = data.list.length; k < max; k += 1) {
+				XeInfinite.addItems(data.list[k]);
+			}
+
+		}
+	});
+}
+
+XeInfinite.init({
+	wrapper: ".xe-list-group",
+	template: template,
+	loadRowCount: 3,
+	rowHeight: 80,
+	onGetRows: onGetRows
+});
+```
