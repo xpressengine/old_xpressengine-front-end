@@ -9,7 +9,7 @@
 toast popup 생성시 보여줄 메시지를 지정합니다.
 ### pos (string)
 토스트 팝업이 발생하는 위치를 나타내며 지정값으로는 'top', 'topLeft', 'topRight', 'bottom', 'bottomLeft', 'bottomRight'를 사용합니다. 기본값은 'bottom'으로 `pos`파라미터를 사용하지 않을 경우 
-하단에서 팝업이 발생합니다.
+화면 하단에서 팝업이 발생합니다.
 
 ```javascript
 XE.toast('success', '토스트 팝업 생성 성공!');
